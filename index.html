@@ -1,0 +1,270 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guajardo Pride | Construction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    /* ------------------ RESET ------------------ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background-color: #f4f4f4;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ------------------ NAV ------------------ */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    nav h1 {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    nav li {
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* ------------------ HERO ------------------ */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url("https://images.unsplash.com/photo-1503387762-592deb58ef4e") center/cover;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 80px 40px;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      max-width: 600px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 500px;
+    }
+
+    /* ------------------ SECTIONS ------------------ */
+    section {
+      padding: 100px 40px;
+      background: white;
+    }
+
+    .section-dark {
+      background: #111;
+      color: white;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h3 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    /* ------------------ SERVICES ------------------ */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-box {
+      background: #f4f4f4;
+      padding: 30px;
+      border-left: 5px solid #000;
+    }
+
+    /* ------------------ GALLERY ------------------ */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    /* ------------------ CONTACT ------------------ */
+    form {
+      display: grid;
+      gap: 15px;
+      max-width: 500px;
+    }
+
+    input, textarea, button {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: black;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover {
+      background: #333;
+    }
+
+    /* ------------------ FOOTER ------------------ */
+    footer {
+      padding: 40px;
+      background: #000;
+      color: white;
+      text-align: center;
+    }
+
+    /* ------------------ SCROLL ANIMATIONS ------------------ */
+    .animate {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .animate.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <h1>GUAJARDO PRIDE</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <h2>Building With Integrity, Pride, and Precision</h2>
+      <p>Guajardo Pride delivers quality construction solutions built to last.</p>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container animate">
+      <h3>Who We Are</h3>
+      <p>
+        Guajardo Pride is a construction company rooted in craftsmanship,
+        accountability, and pride in every project we take on. From residential
+        builds to commercial work, we bring experience and discipline to every site.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section-dark">
+    <div class="container animate">
+      <h3>Our Services</h3>
+      <div class="services">
+        <div class="service-box">Residential Construction</div>
+        <div class="service-box">Commercial Projects</div>
+        <div class="service-box">Remodeling & Renovation</div>
+        <div class="service-box">Concrete & Structural Work</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container animate">
+      <h3>Our Work</h3>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd" />
+        <img src="https://images.unsplash.com/photo-1590650046871-92c887180603" />
+        <img src="https://images.unsplash.com/photo-1505798577917-a65157d3320a" />
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section-dark">
+    <div class="container animate">
+      <h3>Contact Us</h3>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Guajardo Pride. All Rights Reserved.</p>
+  </footer>
+
+  <!-- SCROLL ANIMATION SCRIPT -->
+  <script>
+    const animatedElements = document.querySelectorAll('.animate');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    animatedElements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
