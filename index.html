@@ -1,281 +1,256 @@
-index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Guajardo Pride | Construction</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<title>Guajardo Pride | Construction</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <style>
-    /* ------------------ RESET ------------------ */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<!-- PREVIEW IMAGE (CHANGE USERNAME) -->
+<meta property="og:title" content="Guajardo Pride Construction">
+<meta property="og:description" content="Kitchens, Bathrooms, Remodels & Handyman Services">
+<meta property="og:image" content="https://YOUR-USERNAME.github.io/guajardo-pride/485048160_641503305295910_1190311366116943719_n%20(1).jpg">
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      color: #222;
-      background-color: #f4f4f4;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial;background:#f4f4f4;}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+img{width:100%;display:block}
 
-    img {
-      width: 100%;
-      display: block;
-    }
+/* NAV */
+nav{
+position:fixed;top:0;width:100%;
+background:white;padding:15px 30px;
+display:flex;justify-content:space-between;align-items:center;
+z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
 
-    /* ------------------ NAV ------------------ */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: white;
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
+.logo{display:flex;align-items:center;gap:10px;}
+.logo img{height:40px;}
 
-    nav h1 {
-      font-size: 20px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+nav ul{display:flex;gap:20px;list-style:none;}
+nav a{font-weight:bold;}
 
-    nav ul {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-    }
+.menu-toggle{display:none;font-size:24px;cursor:pointer;}
 
-    nav li {
-      font-size: 14px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+/* HERO */
+.hero{
+height:100vh;
+background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+url("485048160_641503305295910_1190311366116943719_n%20(1).jpg") center/cover;
+color:white;display:flex;align-items:center;padding:80px 40px;
+}
 
-    /* ------------------ HERO ------------------ */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                  url("485048160_641503305295910_1190311366116943719_n (1).jpg") center/cover;
-      color: white;
-      display: flex;
-      align-items: center;
-      padding: 80px 40px;
-    }
+.hero h2{font-size:48px;max-width:600px;}
 
-    .hero h2 {
-      font-size: 48px;
-      max-width: 600px;
-      margin-bottom: 20px;
-    }
+/* SECTIONS */
+section{padding:100px 40px;}
+.section-dark{background:#111;color:white;}
+.container{max-width:1100px;margin:auto;}
 
-    .hero p {
-      font-size: 18px;
-      max-width: 500px;
-    }
+h3{font-size:32px;margin-bottom:20px;}
 
-    /* ------------------ SECTIONS ------------------ */
-    section {
-      padding: 100px 40px;
-      background: white;
-    }
+/* SERVICES */
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
 
-    .section-dark {
-      background: #111;
-      color: white;
-    }
+.service-box{
+position:relative;height:200px;
+display:flex;align-items:center;justify-content:center;
+color:white;font-size:18px;font-weight:bold;
+text-transform:uppercase;cursor:pointer;overflow:hidden;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-    }
+.service-box::before{
+content:"";position:absolute;inset:0;
+background-image:var(--bg);
+background-size:cover;background-position:center;
+opacity:0.3;transition:0.4s;
+}
 
-    h3 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
+.service-box::after{
+content:"";position:absolute;inset:0;
+background:rgba(0,0,0,0.5);
+}
 
-    /* ------------------ SERVICES ------------------ */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
+.service-box:hover::before{
+opacity:0.85;
+transform:scale(1.05);
+}
 
-    .service-box {
-      background: #f4f4f4;
-      padding: 30px;
-      border-left: 5px solid #000;
-      color: #000000
-    }
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
 
-    /* ------------------ GALLERY ------------------ */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+/* CONTACT */
+form{display:grid;gap:15px;max-width:500px;}
+input,textarea,button{padding:12px;}
+button{background:black;color:white;border:none;cursor:pointer;}
 
-    /* ------------------ CONTACT ------------------ */
-    form {
-      display: grid;
-      gap: 15px;
-      max-width: 500px;
-    }
+/* FLOATING BUTTON */
+.quote-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:black;
+color:white;
+padding:15px 20px;
+border-radius:30px;
+cursor:pointer;
+z-index:1000;
+}
 
-    input, textarea, button {
-      padding: 12px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-    }
+/* MOBILE */
+@media(max-width:768px){
+nav ul{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+align-items:center;
+max-height:0;
+overflow:hidden;
+transition:0.3s;
+}
+nav ul.active{max-height:300px;}
+.menu-toggle{display:block;}
+}
 
-    button {
-      background: black;
-      color: white;
-      cursor: pointer;
-      border: none;
-    }
-
-    button:hover {
-      background: #333;
-    }
-
-    /* ------------------ FOOTER ------------------ */
-    footer {
-      padding: 40px;
-      background: #000;
-      color: white;
-      text-align: center;
-    }
-
-    /* ------------------ SCROLL ANIMATIONS ------------------ */
-    .animate {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
-    }
-
-    .animate.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+/* ANIMATION */
+.animate{opacity:0;transform:translateY(40px);transition:0.8s;}
+.animate.show{opacity:1;transform:translateY(0);}
+</style>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <h1>GUAJARDO PRIDE</h1>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- NAV -->
+<nav>
+<div class="logo">
+<img src="485048160_641503305295910_1190311366116943719_n%20(1).jpg">
+<h1>GUAJARDO PRIDE</h1>
+</div>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div>
-      <h2>Building With Integrity, Pride, and Precision</h2>
-      <p>Guajardo Pride delivers quality construction solutions built to last.</p>
-    </div>
-  </div>
+<div class="menu-toggle">☰</div>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container animate">
-      <h3>Who We Are</h3>
-      <p>
-        Guajardo Pride is a construction company rooted in craftsmanship,
-        accountability, and pride in every project we take on. From residential
-        builds to commercial work, we bring experience and discipline to every site.
-      </p>
-    </div>
-  </section>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-  <!-- SERVICES -->
-  <section id="services" class="section-dark">
-    <div class="services">
+<!-- HERO -->
+<div class="hero">
+<div>
+<h2>Building With Integrity, Pride, and Precision</h2>
+</div>
+</div>
 
-  <a href="#gallery" class="service-box" style="--bg:url('images/kitchen.jpg')">
-    Kitchens
-  </a>
+<!-- ABOUT -->
+<section id="about">
+<div class="container animate">
+<h3>Who We Are</h3>
+<p>
+Guajardo Pride is built on craftsmanship, discipline, and pride in every project.
+</p>
+</div>
+</section>
 
-  <a href="#gallery" class="service-box" style="--bg:url('images/bathroom.jpg')">
-    Bathrooms
-  </a>
+<!-- SERVICES -->
+<section id="services" class="section-dark">
+<div class="services">
 
-  <a href="#gallery" class="service-box" style="--bg:url('images/remodel.jpg')">
-    Remodels
-  </a>
+<a href="#gallery" class="service-box"
+style="--bg:url('194091878_4430061927007012_502920819694654951_n%20(1).jpg')">
+Kitchens
+</a>
 
-  <a href="#gallery" class="service-box" style="--bg:url('images/handyman.jpg')">
-    Handyman Services
-  </a>
+<a href="#gallery" class="service-box"
+style="--bg:url('484805818_641503295295911_5971440316697506264_n.jpg')">
+Bathrooms
+</a>
+
+<a href="#gallery" class="service-box"
+style="--bg:url('160664520_4183679568311917_6448658717110172258_n.jpg')">
+Remodels
+</a>
+
+<a href="#gallery" class="service-box"
+style="--bg:url('44215912_2198819333464627_597115434713481216_n%20(1).jpg')">
+Handyman
+</a>
 
 </div>
-  </section>
+</section>
 
-  <!-- GALLERY -->
-  <section id="gallery">
-    <div class="container animate">
-      <h3>Our Work</h3>
-      <div class="gallery">
-        <img src="194091878_4430061927007012_502920819694654951_n (1).jpg" />
-        <img src="484805818_641503295295911_5971440316697506264_n.jpg" />
-        <img src="160664520_4183679568311917_6448658717110172258_n.jpg" />
-        <img src="44215912_2198819333464627_597115434713481216_n (1).jpg" />
-      </div>
-    </div>
-  </section>
+<!-- GALLERY -->
+<section id="gallery">
+<div class="container animate">
+<h3>Our Work</h3>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section-dark">
-    <div class="container animate">
-      <h3>Contact Us</h3>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea rows="5" placeholder="Your Message"></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
+<div class="gallery">
+<img src="194091878_4430061927007012_502920819694654951_n%20(1).jpg">
+<img src="484805818_641503295295911_5971440316697506264_n.jpg">
+<img src="160664520_4183679568311917_6448658717110172258_n.jpg">
+<img src="44215912_2198819333464627_597115434713481216_n%20(1).jpg">
+</div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Guajardo Pride. All Rights Reserved.</p>
-  </footer>
+</div>
+</section>
 
-  <!-- SCROLL ANIMATION SCRIPT -->
-  <script>
-    const animatedElements = document.querySelectorAll('.animate');
+<!-- CONTACT -->
+<section id="contact" class="section-dark">
+<div class="container animate">
+<h3>Contact Us</h3>
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, {
-      threshold: 0.2
-    });
+<form action="https://formspree.io/f/xgvkgbdp" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
 
-    animatedElements.forEach(el => observer.observe(el));
-  </script>
+</div>
+</section>
+
+<!-- FLOATING BUTTON -->
+<div class="quote-btn"
+onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+Get a Quote
+</div>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Guajardo Pride</p>
+</footer>
+
+<script>
+// MOBILE MENU
+const toggle=document.querySelector('.menu-toggle');
+const navLinks=document.querySelector('nav ul');
+toggle.addEventListener('click',()=>{navLinks.classList.toggle('active');});
+
+// SCROLL ANIMATION
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');}});
+});
+document.querySelectorAll('.animate').forEach(el=>observer.observe(el));
+
+// SCROLL FROM SERVICES
+document.querySelectorAll('.service-box').forEach(box=>{
+box.addEventListener('click',()=>{
+document.getElementById('gallery').scrollIntoView({behavior:'smooth'});
+});
+});
+</script>
 
 </body>
 </html>
