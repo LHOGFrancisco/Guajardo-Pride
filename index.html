@@ -217,15 +217,7 @@ Handyman
 
 <!-- GALLERY -->
 <section id="gallery">
-<div class="container animate">
-<h3>Our Work</h3>
-
-<div class="gallery">
-<img src="194091878_4430061927007012_502920819694654951_n%20(1).jpg">
-<img src="484805818_641503295295911_5971440316697506264_n.jpg">
-<img src="160664520_4183679568311917_6448658717110172258_n.jpg">
-<img src="44215912_2198819333464627_597115434713481216_n%20(1).jpg">
-</div>
+<div class="gallery" id="gallery-images"></div>
 
 </div>
 </section>
@@ -276,5 +268,46 @@ document.getElementById('gallery').scrollIntoView({behavior:'smooth'});
 });
 </script>
 
+<script>
+const gallery = document.getElementById("gallery-images");
+
+const images = {
+  kitchens: [
+    "194091878_4430061927007012_502920819694654951_n%20(1).jpg"
+  ],
+  bathrooms: [
+    "484805818_641503295295911_5971440316697506264_n.jpg"
+  ],
+  remodels: [
+    "160664520_4183679568311917_6448658717110172258_n.jpg"
+  ],
+  handyman: [
+    "44215912_2198819333464627_597115434713481216_n%20(1).jpg"
+  ]
+};
+
+document.querySelectorAll(".service-box").forEach(box => {
+  box.addEventListener("click", () => {
+
+    const type = box.getAttribute("data-type");
+
+    gallery.innerHTML = "";
+
+    images[type].forEach(src => {
+      const img = document.createElement("img");
+      img.src = src;
+      gallery.appendChild(img);
+    });
+
+    document.getElementById("gallery").scrollIntoView({
+      behavior: "smooth"
+    });
+
+  });
+});
+</script>
+
+</body>
+  
 </body>
 </html>
